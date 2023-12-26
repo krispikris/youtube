@@ -4,7 +4,8 @@
             class="rounded-lg bg-black m-2"
             :class="[
                 show && width > 639
-                ? 'absolute z-30 transition ease-in-out delay-150 hover:translate-y-8 hover:scale-125 hover:bg-[#202020] duration-300'
+                // ? 'absolute z-30 transition ease-in-out delay-150 hover:translate-y-8 hover:scale-125 hover:bg-[#202020] duration-300'
+                ? 'absolute z-30 transition ease-in-out delay-150 hover:scale-100 hover:bg-[#202020] duration-300'
                 : ''
             ]"
         >
@@ -14,7 +15,8 @@
                     :src="thumbnail || ''"
                     :class="
                         show
-                        ? 'transition ease-in-out delay-150 rounded-t-lg'
+                        // ? 'transition ease-in-out delay-150 rounded-t-lg'
+                        ? 'transition ease-in-out delay-150 rounded-l-lg'
                         : 'rounded-lg',
                         showVideo ? 'delay-350 hidden' : ''
                     "
@@ -27,13 +29,17 @@
                 <div class="flex mt-1.5">
                     <div>
                         <img
-                            class="rounded-full m-1.5 mt-2 flex items-baseline w-8 h-8"
+                            class="flex items-baseline rounded-full m-1.5 mt-2 w-8 h-8"
                             :src="image || ''"
                         >
                     </div>
                     <div class="px-1.5 text-white mt-1">
                         <div class="text-[17px] font-extrabold w-full cursor-pointer">{{ title.substring(0, 100) }}</div>
-                        <p class="text-[14px] text-gray-300 font-extrabold flex gap-1 items-center cursor-pointer">{{ user.substring(0, 30) }} <CheckCircle fillColor="#888888" :size="17"/></p>
+                        <p class="text-[14px] text-gray-300 font-extrabold flex gap-1 items-center cursor-pointer">
+                            {{ user.substring(0, 30) }}
+                            <CheckCircle fillColor="#888888" :size="17"/>
+                        </p>
+
                         <div class="text-sm mb-1 text-gray-300 cursor-pointer">{{ views }}</div>
                     </div>
                 </div>
@@ -62,11 +68,11 @@
   let video = ref(null)
   let width = ref(document.documentElement.clientWidth);
 
-    onMounted(() => {
-        window.addEventListener('resize', () => {
-            width.value = document.documentElement.clientWidth;
-        });
-    })
+onMounted(() => {
+    window.addEventListener('resize', () => {
+        width.value = document.documentElement.clientWidth;
+    });
+})
 
   watch(() => show.value, (show) => {
     if (show) {

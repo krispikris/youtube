@@ -1,19 +1,37 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import NavLayout from '@/Layouts/NavLayout.vue';
+import VideoCard from '@/Components/VideoCard.vue';
 
-defineProps({
-    canLogin: Boolean,
-    canRegister: Boolean,
-    laravelVersion: String,
-    phpVersion: String,
-});
+// defineProps({
+//     canLogin: Boolean,
+// });
 </script>
 
 <template>
 <Head title="Youtube"/>
+
 <NavLayout>
+        <div 
+            class="
+                grid
+                2xl:grid-cols-5
+                xl:grid-cols-4
+                lg:grid-cols-3
+                md:grid-cols-3
+                sm:grid-cols-2
+            ">
+            <VideoCard
+                title="Example Title"
+                user="John Doe"
+                views="1.2M views"
+                image="https://picsum.photos/200/300"
+                videoUrl="/videos/Auto.mp4"
+                thumbnail="/videos/Thumbnails/Auto.png"
+            />
+        </div>
 </NavLayout>
+
 </template>
 
 <style>

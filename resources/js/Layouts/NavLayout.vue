@@ -104,7 +104,24 @@ let openSideNav = ref(true);
         </ul>
     </div>
 
-    <div id="SideNavOverlay"></div>
-    <slot />
+    <div id="SideNavOverlay">
+
+    </div>
+
+    <div
+        class="absolute w-[100%] h-[calc(100%-64px)] right-0 top-[64px]"
+        :class="{
+            'w-[calc(100%-70px)]': !openSideNav,
+            'w-[calc(100%-240px)]': openSideNav
+        }"
+    >
+      <slot />
+    </div>
   </div>
 </template>
+
+<style>
+    body {
+        background-color: black;
+    }
+</style>
