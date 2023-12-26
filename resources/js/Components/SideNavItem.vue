@@ -15,7 +15,7 @@
 
 <script setup>
   import { defineProps, toRefs } from 'vue';
-  import { Link } from '@inertiajs/vue3';
+//   import { Link } from '@inertiajs/vue3';
   import Home from 'vue-material-design-icons/Home.vue';
   import FolderPlayOutline from 'vue-material-design-icons/FolderPlayOutline.vue';
   import ImageMultiple from 'vue-material-design-icons/ImageMultiple.vue';
@@ -43,7 +43,3 @@
   if (iconString.value === 'Add Video') icon = VideoPlusOutlineIcon
   if (iconString.value === 'Delete Video') icon = DeleteIcon
 </script>
-
-<style lang="scss" scoped>
-
-</style>
