@@ -15,7 +15,7 @@ let openSideNav = ref(true);
       class="fixed flex items-center justify between w-[100%] h-[64px] bg-black z-20"
     >
       <div class="flex items-center">
-        <button
+        <button @click="openSideNav = !openSideNav"
           class="inline-block rounded-full p-2 ml-3 hover:bg-gray-800 cursor-pointer"
         >
           <MenuIcon fillColor="#FFFFFF" :size="26" />
@@ -68,9 +68,39 @@ let openSideNav = ref(true);
       </div>
     </div>
 
-    <div id="SideNav" class="fixed w-[240px] h-[100%] bg-black">
-        <ul class="w-full mt-[64px]">
+    <div id="SideNav" 
+         class="fixed h-[100%] bg-black"
+         :class="[!openSideNav ? 'w-[70px]' : 'w-[240px]']"     
+    >
+        <ul :class="[!openSideNav ? 'p-2' : 'px-4 pb-2 pt-[8px]']" class="w-full mt-[64px]">
             <SideNavItem :openSideNav="openSideNav" iconString="Home"/>
+            <SideNavItem :openSideNav="openSideNav" iconString="Add Video"/>
+            <SideNavItem :openSideNav="openSideNav" iconString="Delete Video"/>
+            
+            <div class="my-2.5 border-b border-b-gray-700"></div>
+            
+            <SideNavItem :openSideNav="openSideNav" iconString="Subscriptions"/>
+            <SideNavItem :openSideNav="openSideNav" iconString="Library"/>
+            <SideNavItem :openSideNav="openSideNav" iconString="Liked"/>
+            <SideNavItem :openSideNav="openSideNav" iconString="History"/>
+            <SideNavItem :openSideNav="openSideNav" iconString="Watch Later"/>
+            
+            <div v-if="openSideNav">
+                <div class="my-2.5 border-b border-b-gray-700" />
+                          <div class="text-[12.5px] text-gray-400 text-extrabold">
+                              About Press Copyright
+                              <div>Contact Us Creators</div>
+                              <!-- Creators -->
+                              Advertise Developers
+                          </div>
+                <div class="my-2.5 border-b border-b-gray-700" />
+                          <div class="text-[12.5px] text-gray-400 text-extrabold">
+                              Terms Privacy Policy & Safety
+                              <div>How YouTube Works</div>
+                              Test New Features
+                          </div>
+            </div>
+
         </ul>
     </div>
 
