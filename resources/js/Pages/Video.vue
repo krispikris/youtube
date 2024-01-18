@@ -70,7 +70,7 @@
                                     <div class="text-gray-400 pl-3">{{ comment.time }}</div>
                                 </div>
                                 <div class="text-gray-200 text-sm font-extrabold">
-                                    <!-- {{ comment.text }}s -->
+                                    {{ comment.text }}
                                 </div>
                                 <div class="mt-4 flex items-center">
                                     <ThumbUpOutline fillColor="#FFFFFF" :size="20" class="pr-2"/>
