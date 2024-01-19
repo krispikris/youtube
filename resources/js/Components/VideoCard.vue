@@ -3,7 +3,7 @@
         <div
             class="rounded-lg bg-black m-2"
             :class="[
-                show && width > 639
+                // show && width > 639
                 // ? 'absolute z-30 transition ease-in-out delay-150 hover:translate-y-8 hover:scale-125 hover:bg-[#202020] duration-300'
                 ? 'absolute z-30 transition ease-in-out delay-150 hover:scale-100 hover:bg-[#202020] duration-300'
                 : ''
