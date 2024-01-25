@@ -21,14 +21,14 @@ import VideoCard from '@/Components/VideoCard.vue';
                 md:grid-cols-3
                 sm:grid-cols-2
             ">
-            <!-- <VideoCard
+            <VideoCard
                 title="Example Title"
                 user="John Doe"
                 views="1.2M views"
                 image="https://picsum.photos/200/300"
                 videoUrl="/videos/Auto.mp4"
                 thumbnail="/videos/Thumbnails/Auto.png"
-            /> -->
+            />
         </div>
 </NavLayout>
 
